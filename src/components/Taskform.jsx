@@ -20,7 +20,9 @@ export default function Taskform({ addTask }) {
             <h1>Task Form</h1>
             <form onSubmit={handelsubmit} id='task-form'>
                 <div id='inp'>
-                    <input type="text" placeholder='Enter the text' onChange={(e) => setTask(e.target.value)} />
+                    <input type="text" placeholder='Enter the text'
+                        value={task}
+                        onChange={(e) => setTask(e.target.value)} />
                     <span><button type="submit" >Add task</button></span>
                     {/* <h1>{task} </h1> */}
                 </div>

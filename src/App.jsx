@@ -4,7 +4,7 @@ import Tasklist from './components/Tasklist'
 import ProgressTracker from './components/ProgressTracker'
 // import './App.css'
 
-function App() {
+export default function App() {
   // const [count, setCount] = useState(0)
 
   const [tasks, settasks] = useState([]);
@@ -12,10 +12,21 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   })
+
   const addTask = (task) => {
-    settasks([...tasks, task]);  //... is rest operator
+    settasks([...tasks, task]);  //... is a rest operator
   }
 
+  const updateTask = (updatedTask, index) => {
+    const newtask = [...tasks];
+    newtask[index] = updatedTask;
+    settasks(newtask);
+  }
+
+  const deleteTask = (index) => {
+    settasks(tasks.filter((_, i) => i != index));
+
+  }
   return (
     <>
       <div>
@@ -32,4 +43,3 @@ function App() {
   )
 }
 
-export default App
