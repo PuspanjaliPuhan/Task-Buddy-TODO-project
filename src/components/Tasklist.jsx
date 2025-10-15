@@ -9,7 +9,7 @@ export default function Tasklist({ tasks, updateTask, deleteTask }) {
     return (
         <div className='task-list'>
             <ul>
-                {tasks.map((task, index) => {
+                {tasks.map((task, index) => (
                     <li key={index} className={task.completed ? 'completed' : ''}>
                         <div>
                             <span>
@@ -27,7 +27,7 @@ export default function Tasklist({ tasks, updateTask, deleteTask }) {
                             </button>
                         </div>
                     </li>
-                })}
+                ))}
             </ul>
         </div>
     );
