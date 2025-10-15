@@ -18,7 +18,7 @@ export default function Taskform({ addTask }) {
     return (
         <div>
             <h1>Task Form</h1>
-            <form onSubmit={handelsubmit} id='task-form'>
+            <form onSubmit={handelsubmit} className='task-form'>
                 <div id='inp'>
                     <input type="text" placeholder='Enter the text'
                         value={task}
